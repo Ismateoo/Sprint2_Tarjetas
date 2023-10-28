@@ -1,0 +1,264 @@
+* {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* CONTENEDORES */
+.contenedor {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  height: 100vh;
+  width: 100vw;
+  max-width: 1440px;
+}
+/* CONTENEDOR IMAGENES */
+.contenedor__imagenes {
+  grid-column: 1;
+  background-image: url(img/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTENEDOR FORMULARIO */
+.contenedor__formulario {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  gap: 50px; 
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.formulario__fecha-cvc{
+  display: flex;
+  gap: 20px;
+}
+
+.formulario__fecha__mm-yy{
+  display: flex;
+  gap: 10px;
+}
+
+.formulario__fecha{
+  width: 50%;
+  
+}
+.formulario__cvc{
+  width: 50%;
+  
+}
+
+.formulario__fecha--error{
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTENEDOR GRACIAS */
+.contenedor__gracias{
+  grid-column: 2;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+  gap:40px;
+}
+
+h1{
+  letter-spacing: 3px;
+  color: hsl(278, 68%, 11%);
+  font-size: 27px;
+}
+
+p{
+  color: hsl(270, 3%, 87%);
+}
+
+/* FORMULARIO */
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: hsl(278, 68%, 11%);
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+input {
+  width:100%;
+  box-sizing: border-box;
+  border-radius: 7px;
+  border: 2px solid hsl(270, 3%, 87%); 
+  color: hsl(270, 3%, 87%);;
+  padding: 10px;
+  padding-left: 15px;
+}
+
+input:focus{
+  outline: none;    /* saca el borde anterior */
+  border: solid 2px transparent;
+  border-radius: 7px;
+  /* creo una "imagen" con fondo blanco y el contorno de colores */
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, hsl(249, 99%, 64%),hsl(278, 94%, 30%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  /* 
+  background-origin: especifico el origen de la "imagen"
+  background-clip: hago que la "imagen" se vea dentro del borde 
+  */
+}
+
+.fecha__input {
+  min-width: 50%;
+}
+
+.formulario__boton{
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+}
+
+.formulario__boton:hover{
+  cursor: pointer;
+  background-color: blueviolet;
+}
+
+/* TARJETAS */
+span {
+  color: white;
+}
+
+.tarjeta-frente {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+.tarjeta-atras {
+  position: absolute;
+  top: 49%;
+  left: 30%;
+}
+
+.tarjeta-frente__logo {
+  position: absolute;
+  top: 10%;
+  left:7%;
+}
+
+.tarjeta-frente__numero {
+  position: absolute;
+  top: 55%;
+  left: 7%;
+  font-size: 1.7rem;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+.tarjeta-frente__nombre {
+  position: absolute;
+  top: 80%;
+  left: 7%;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+.tarjeta-frente__fecha {
+  position: absolute;
+  top: 80%;
+  left: 80%;
+}
+
+.mes{
+position: absolute;
+top: 80%;
+left: 75%;
+}
+
+.barra{
+  position: absolute;
+  top: 80%;
+  left: 80%;
+}
+
+.anio{
+  position: absolute;
+  top: 80%;
+  left: 82%;
+}
+
+.tarjeta-atras__cvc {
+  position: absolute;
+  top: 44%;
+  left:80%;
+}
+
+/* Mensajes error */
+.mensajeError{
+  color: red;
+  font-size: 0.8rem;
+}
+@media (max-width: 375px) {
+  /* CONTENEDORES */
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+  }
+
+  .contenedor__imagenes{
+    background-image: url(img/bg-main-mobile.png);
+    width: 100%;
+    height: 40%;
+  }
+ 
+  .contenedor__formulario{
+    width: 100%;
+    height: 40%;
+  }
+
+  .contenedor__gracias{
+    width: 100%;
+    height: 40%;
+  }
+
+  /* Boton Continuar */
+  .formulario__boton--continuar{
+    width: 90%;
+  }
+
+  /* FORMULARIO */
+  .formulario{
+    margin: 20px;
+  }
+
+  /* TARJETAS */
+  .tarjeta-frente{
+    transform: scale(0.6);
+    z-index: 1;
+    left: -70px;
+  }
+
+  .tarjeta-atras{
+    transform: scale(0.6);
+    z-index: 0;
+    top: -12px;
+    left: -10px
+  } 
+}
